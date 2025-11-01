@@ -1,122 +1,147 @@
-<div class="min-h-screen bg-cover bg-fixed bg-center" style="background-image: url('assets/images/bg.jpg')">
-  <div class="min-h-screen bg-black/50 backdrop-blur-sm flex flex-col">
-    
-    <!-- Header -->
-    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-lg shadow-md">
-      <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold text-teal-600">
-          OK!<span class="text-slate-800">English</span> school
-        </a>
-        
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex space-x-8 items-center">
-          <a href="#about" class="text-slate-600 hover:text-teal-600 transition-colors">Про нас</a>
-          <a href="#courses" class="text-slate-600 hover:text-teal-600 transition-colors">Курси</a>
-          <a href="#contacts" class="text-slate-600 hover:text-teal-600 transition-colors">Контакти</a>
-          <a href="tel:+380934899110" class="text-xl font-bold text-slate-700 hover:text-teal-600 transition-colors">+38 (093) 489-91-10</a>
-        </nav>
-        
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button (click)="toggleMenu()" class="text-slate-800 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-      
-      <!-- Mobile Nav -->
-      @if (isMenuOpen()) {
-        <div class="md:hidden bg-white/95">
-          <nav class="flex flex-col items-center space-y-4 py-4">
-            <a href="#about" (click)="toggleMenu()" class="text-slate-600 hover:text-teal-600 transition-colors">Про нас</a>
-            <a href="#courses" (click)="toggleMenu()" class="text-slate-600 hover:text-teal-600 transition-colors">Курси</a>
-            <a href="#contacts" (click)="toggleMenu()" class="text-slate-600 hover:text-teal-600 transition-colors">Контакти</a>
-            <a href="tel:+380934899110" (click)="toggleMenu()" class="text-lg font-bold text-slate-700 hover:text-teal-600 transition-colors py-2">+38 (093) 489-91-10</a>
-          </nav>
-        </div>
-      }
-    </header>
+<div class="min-h-screen bg-cover bg-fixed bg-center" style="background-image: url('assets/images/background.png')">
+    <div class="min-h-screen bg-black/10 backdrop-blur-sm flex flex-col">
 
-    <main class="container mx-auto px-6 py-12 md:py-20 flex-grow">
-      
-      <!-- Hero Section -->
-      <section id="about" class="text-center mb-16">
-        <div class="bg-white/10 p-6 rounded-2xl max-w-4xl mx-auto">
-           <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">Відкрийте світ ділової англійської</h1>
-           <p class="text-base md:text-lg text-slate-200 max-w-3xl mx-auto">
-             OK!English school — це ваш надійний партнер у вивченні бізнес-англійської. Ми пропонуємо сучасні методики та індивідуальний підхід для досягнення ваших професійних цілей.
-           </p>
-        </div>
-      </section>
-      
-      <!-- Courses Section -->
-      <section id="courses">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Наші курси</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          @for (course of courses(); track course.id) {
-            <app-course-card [course]="course" (detailsClick)="openCourseDetails(course)" />
-          }
-        </div>
-      </section>
+        <!-- Header -->
+        <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-lg shadow-md">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-teal-600">
+                    OK!<span class="text-slate-800">English</span> school
+                </a>
 
-    </main>
-    
-    <!-- Footer -->
-    <footer id="contacts" class="bg-slate-900 text-white">
-      <div class="container mx-auto px-6 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          
-          <!-- Column 1: Brand & Copyright -->
-          <div>
-            <a href="#" class="text-xl font-bold text-teal-400">OK!English school</a>
-            <p class="text-slate-500 text-sm mt-2">&copy; {{ currentYear }} Всі права захищено.</p>
-          </div>
-          
-          <!-- Column 2: Navigation -->
-          <div>
-            <h3 class="font-semibold text-slate-300 uppercase tracking-wider">Навігація</h3>
-            <div class="mt-4 flex flex-col space-y-2">
-              <a href="#about" class="text-slate-400 hover:text-teal-400 transition-colors">Про нас</a>
-              <a href="#courses" class="text-slate-400 hover:text-teal-400 transition-colors">Курси</a>
-              <a href="#contacts" class="text-slate-400 hover:text-teal-400 transition-colors">Контакти</a>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-slate-600 hover:text-teal-600 transition-colors">Про нас</a>
+                    <a href="#courses" class="text-slate-600 hover:text-teal-600 transition-colors">Курси</a>
+                    <a href="#contacts" class="text-slate-600 hover:text-teal-600 transition-colors">Контакти</a>
+                    <a href="tel:+380934899110"
+                       class="text-xl font-bold text-slate-700 hover:text-teal-600 transition-colors">+38 (093)
+                        489-91-10</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button (click)="toggleMenu()" class="text-slate-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-          </div>
-          
-          <!-- Column 3: Contacts -->
-          <div>
-            <h3 class="font-semibold text-slate-300 uppercase tracking-wider">Контакти</h3>
-            <div class="mt-4 flex flex-col space-y-3">
-              <!-- Email -->
-              <a href="mailto:o.konstantinova@gmail.com" class="flex items-center justify-center md:justify-start text-slate-400 hover:text-teal-400 transition-colors">
-                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                <span>o.konstantinova@gmail.com</span>
-              </a>
-              <!-- Phone -->
-              <a href="tel:+380934899110" class="flex items-center justify-center md:justify-start text-slate-400 hover:text-teal-400 transition-colors">
-                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                <span>+38 (093) 489-91-10</span>
-              </a>
-              <!-- Telegram -->
-              <a href="https://t.me/Oksana_Konstantinova" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center md:justify-start text-slate-400 hover:text-teal-400 transition-colors">
-                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.57c-.28 1.1-.86 1.32-1.7.82l-4.7-3.41l-2.27 2.21c-.25.24-.47.46-.95.46z"/></svg>
-                <span>@Oksana_Konstantinova</span>
-              </a>
-              <!-- WhatsApp -->
-              <a href="https://wa.me/380934899110" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center md:justify-start text-slate-400 hover:text-teal-400 transition-colors">
-                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21c5.46 0 9.91-4.45 9.91-9.91c0-5.46-4.45-9.91-9.91-9.91zm0 18.01c-1.5 0-2.96-.4-4.22-1.13l-.3-.18l-3.12.82l.83-3.04l-.2-.31c-.8-1.3-1.21-2.83-1.21-4.39c0-4.54 3.7-8.24 8.24-8.24c4.54 0 8.24 3.7 8.24 8.24c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.82c-.22-.09-.38-.12-.54.12c-.16.25-.64.82-.79.98c-.15.16-.3.18-.54.06c-.25-.12-1.04-.38-1.98-1.22c-.73-.66-1.22-1.47-1.36-1.72c-.14-.25-.01-.38.11-.5c.11-.11.25-.29.37-.43c.12-.14.16-.25.25-.41c.09-.16.04-.3-.02-.43c-.06-.12-.54-1.3-.74-1.78c-.2-.48-.4-.42-.54-.42h-.47c-.16 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.88 2.4 1 2.56c.12.16 1.76 2.68 4.25 3.73c.59.25 1.05.4 1.41.51c.59.18 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.15-1.18c-.06-.11-.22-.18-.47-.3z"/></svg>
-                <span>WhatsApp</span>
-              </a>
+
+            <!-- Mobile Nav -->
+            @if (isMenuOpen()) {
+            <div class="md:hidden bg-white/95">
+                <nav class="flex flex-col items-center space-y-4 py-4">
+                    <a href="#about" (click)="toggleMenu()"
+                       class="text-slate-600 hover:text-teal-600 transition-colors">Про нас</a>
+                    <a href="#courses" (click)="toggleMenu()"
+                       class="text-slate-600 hover:text-teal-600 transition-colors">Курси</a>
+                    <a href="#contacts" (click)="toggleMenu()"
+                       class="text-slate-600 hover:text-teal-600 transition-colors">Контакти</a>
+                    <a href="tel:+380934899110" (click)="toggleMenu()"
+                       class="text-lg font-bold text-slate-700 hover:text-teal-600 transition-colors py-2">+38 (093)
+                        489-91-10</a>
+                </nav>
             </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-    <!-- Modal -->
-    @if (selectedCourse(); as course) {
-      <app-modal [course]="course" (close)="closeCourseDetails()" />
-    }
-  </div>
+            }
+        </header>
+
+        <main class="container mx-auto px-6 py-12 md:py-20 flex-grow">
+
+            <!-- Hero Section -->
+            <section id="about" class="text-center mb-16">
+                <div class="bg-black/30 p-6 rounded-2xl max-w-4xl mx-auto">
+                    <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">Відкрийте світ ділової
+                        англійської</h1>
+                    <p class="text-base md:text-lg text-slate-200 max-w-3xl mx-auto">
+                        OK!English school — це ваш надійний партнер у вивченні бізнес-англійської. Ми пропонуємо сучасні
+                        методики та індивідуальний підхід для досягнення ваших професійних цілей.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="courses">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Наші курси</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    @for (course of courses(); track course.id) {
+                    <app-course-card [course]="course" (detailsClick)="openCourseDetails(course)"/>
+                    }
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer id="contacts" class="bg-black/75 text-white">
+            <div class="container mx-auto px-6 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+                    <!-- Column 1: Brand & Copyright -->
+                    <div>
+                        <a href="#" class="text-xl font-bold text-teal-400">OK!English school</a>
+                        <p class="text-slate-500 text-sm mt-2">&copy; {{ currentYear }} Всі права захищено.</p>
+                    </div>
+
+                    <!-- Column 2: Navigation -->
+                    <div>
+                        <h3 class="font-semibold text-slate-300 uppercase tracking-wider">Навігація</h3>
+                        <div class="mt-4 flex flex-col space-y-2">
+                            <a href="#about" class="text-slate-400 hover:text-teal-400 transition-colors">Про нас</a>
+                            <a href="#courses" class="text-slate-400 hover:text-teal-400 transition-colors">Курси</a>
+                            <a href="#contacts"
+                               class="text-slate-400 hover:text-teal-400 transition-colors">Контакти</a>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Contacts -->
+                    <div>
+                        <h3 class="font-semibold text-slate-300 uppercase tracking-wider">Контакти</h3>
+                        <div class="mt-4 flex flex-col space-y-3">
+                            <!-- Email -->
+                            <a href="mailto:o.konstantinova@gmail.com"
+                               class="flex items-center justify-center md:justify-start text-slate-400 hover:text-teal-400 transition-colors">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                <span>o.konstantinova@gmail.com</span>
+                            </a>
+                            <!-- Phone -->
+                            <a href="tel:+380934899110"
+                               class="flex items-center justify-center md:justify-start text-slate-400 hover:text-teal-400 transition-colors">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                                </svg>
+                                <span>+38 (093) 489-91-10</span>
+                            </a>
+                            <!-- Telegram -->
+                            <a href="https://t.me/Oksana_Konstantinova" target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-center md:justify-start text-slate-400 hover:text-teal-400 transition-colors">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.57c-.28 1.1-.86 1.32-1.7.82l-4.7-3.41l-2.27 2.21c-.25.24-.47.46-.95.46z"/>
+                                </svg>
+                                <span>@Oksana_Konstantinova</span>
+                            </a>
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/380934899110" target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-center md:justify-start text-slate-400 hover:text-teal-400 transition-colors">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21c5.46 0 9.91-4.45 9.91-9.91c0-5.46-4.45-9.91-9.91-9.91zm0 18.01c-1.5 0-2.96-.4-4.22-1.13l-.3-.18l-3.12.82l.83-3.04l-.2-.31c-.8-1.3-1.21-2.83-1.21-4.39c0-4.54 3.7-8.24 8.24-8.24c4.54 0 8.24 3.7 8.24 8.24c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.82c-.22-.09-.38-.12-.54.12c-.16.25-.64.82-.79.98c-.15.16-.3.18-.54.06c-.25-.12-1.04-.38-1.98-1.22c-.73-.66-1.22-1.47-1.36-1.72c-.14-.25-.01-.38.11-.5c.11-.11.25-.29.37-.43c.12-.14.16-.25.25-.41c.09-.16.04-.3-.02-.43c-.06-.12-.54-1.3-.74-1.78c-.2-.48-.4-.42-.54-.42h-.47c-.16 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.88 2.4 1 2.56c.12.16 1.76 2.68 4.25 3.73c.59.25 1.05.4 1.41.51c.59.18 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.15-1.18c-.06-.11-.22-.18-.47-.3z"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal -->
+        @if (selectedCourse(); as course) {
+        <app-modal [course]="course" (close)="closeCourseDetails()"/>
+        }
+    </div>
 </div>
