@@ -5,4 +5,5 @@ export interface Course {
   shortDescription: string;
   longDescription: string;
   details?: string[];
+  courseDetails?: string;
 }
