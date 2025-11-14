@@ -474,4 +474,10 @@
     @if (selectedCourse(); as course) {
     <app-modal [course]="course" (close)="closeCourseDetails()"/>
     }
+
+    <app-registration-modal
+            *ngIf="isRegistrationOpen"
+            (close)="isRegistrationOpen = false">
+    </app-registration-modal>
+
 </div>

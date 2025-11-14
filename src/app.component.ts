@@ -25,7 +25,25 @@ backgroundUrl = new URL('../assets/images/background.jpg', import.meta.url).href
 
   courses = signal<Course[]>([
     {
+      id: 3,
+      advertisement:"<ul><li class='text-red-600'><b>Початок занять</b> - 1 грудня 2025 року</li><li><b>Ранкови групи</b> - с 9.00 - 10.30</li><li><b>Вечірні групи</b> - с 19.30 - 21.00</li></ul>",
+      announcement:"Анонс!",
+      title: "Ділова англійська мова",
+      image: 'assets/images/corporate.png',
+      shortDescription: 'Працюєте в міжнародному середовищі або плануєте кар\'єру у сфері бізнесу? Цей курс допоможе вам впевнено спілкуватися з колегами, клієнтами та партнерами.',
+      longDescription: '<b>Курс з 24 урокiв та 12 тем 2 рази на тиждень</b>. Кожна тема потребує ще й практичних випробувань, тому кожен другий урок буде присвячений вiдпрацюванню практичних навичок, а саме - business cases and role models. Так ви розвинете важливі навички ділового спілкування, такі як проведення презентацій, участь у зустрічах, ведення переговорів, телефонні дзвінки та використання англійської мови в соціальних ситуаціях.',
+      details: [
+        '<b>Підходить для рівнів:</b> від Pre-Intermediate до Upper-Intermediate',
+        '<b>Технiчний формат:</b> онлайн (Zoom/Meet, Miro)',
+        '<b>Тривалість заняття:</b> 90 хв',
+        '<b>Мова викладання:</b> англійська + українська (за потреби)'
+      ],
+      courseDetails: '<ul><li><strong>1-2 уроки – BRENDS</strong> (Talk about your favourite brands)<br>LANGUAGE WORK: Words that go with brand, product and market; Present simple and present continuous<br>SKILLS: Taking part in meetings</li><li><strong>3-4 уроки – TRAVEL</strong> (Talk about your travel experiences)<br>LANGUAGE WORK: British and American travel words; Talking about the future<br>SKILLS: Telephoning: making arrangements</li><li><strong>5-6 уроки – CHANGE</strong> (Discuss attitudes to change in general and at work)<br>LANGUAGE WORK: Words for describing change; Past simple and present perfect<br>SKILLS: Managing meetings</li><li><strong>7-8 уроки – ORGANISATION</strong> (Talk about status within an organisation)<br>LANGUAGE WORK: Words and expressions to describe company structure; Noun combinations<br>SKILLS: Socialising: introductions and networking</li><li><strong>9-10 уроки – ADVERTISING</strong> (Discuss authentic advertisements)<br>LANGUAGE WORK: Words and expressions for talking about advertising; Articles<br>SKILLS: Starting and structuring a presentation</li><li><strong>11-12 уроки – MONEY</strong> (Do a Quiz and discuss attitudes to money)<br>LANGUAGE WORK: Words and expressions for talking about finance<br>SKILLS: Dealing with figures and describing trends</li><li><strong>13-14 уроки – CULTURES</strong> (Discuss the importance of cultural awareness in business)<br>LANGUAGE WORK: Idioms for talking about business relationships; Advice, obligation and necessity<br>SKILLS: Social English</li><li><strong>15-16 уроки – HUMAN RESOURCES</strong> (Talk about job interviews)<br>LANGUAGE WORK: Expressions for talking about job applications; -ing forms and infinitives<br>SKILLS: Getting information on the telephone</li><li><strong>17-18 уроки – INTERNATIONAL MARKETS</strong> (Discuss the development of international markets)<br>LANGUAGE WORK: Words and expressions for talking about free trade; Conditions<br>SKILLS: Negotiating</li><li><strong>19-20 уроки – ETHICS</strong> (Discuss questions of ethics at work)<br>LANGUAGE WORK: Words to describe illegal activity or unethical behaviour; Narrative tenses<br>SKILLS: Considering options</li><li><strong>21-22 уроки – LEADERSHIP</strong> (Discuss the qualities of good leadership)<br>LANGUAGE WORK: Words to describe; Relative clauses<br>SKILLS: Presenting</li><li><strong>23-24 уроки – COMPETITION</strong> (Do a quiz on how competitive you are)<br>LANGUAGE WORK: Idioms from sport to describe competition; Passives<br>SKILLS: Negotiating</li></ul>'
+    },
+    {
       id: 1,
+      advertisement:"",
+      announcement:"",
       title: 'Англійська для подорожей',
       image: 'assets/images/travel.png',
       shortDescription: '10 уроків, які зроблять ваші подорожі легшими та приємнішими! Цей курс для вас, якщо ви плануєте поїздку за кордон, але хвилюєтеся через мовний бар\'єр.',
@@ -41,28 +59,18 @@ backgroundUrl = new URL('../assets/images/background.jpg', import.meta.url).href
     },
     {
       id: 2,
+      advertisement:"",
+      announcement:"",
       title: 'Індивідуальні уроки Business English',
       image: 'assets/images/business.png',
       shortDescription: 'Хочете впевнено спілкуватися англійською на роботі, писати професійні листи чи брати участь у ділових зустрічах? Запрошую на індивідуальні заняття.',
       longDescription: 'Персональний навчальний план під ваші цілі (робота, кар\'єра, співбесіда, бізнес-подорожі). Розвиток ключових навичок: презентації, переговори, дзвінки, наради, імейли, small talk. Заняття включають живі діалоги, рольові ігри, кейс-стаді та актуальну бізнес-лексику з використанням сучасних автентичних матеріалів. Гнучкий графік занять онлайн — навчайтеся з будь-якої точки світу.',
-      courseDetails: '<ul><li><strong>1-2 уроки – BRENDS</strong> (Talk about your favourite brands)<br>LANGUAGE WORK: Words that go with brand, product and market; Present simple and present continuous<br>SKILLS: Taking part in meetings</li><li><strong>3-4 уроки – TRAVEL</strong> (Talk about your travel experiences)<br>LANGUAGE WORK: British and American travel words; Talking about the future<br>SKILLS: Telephoning: making arrangements</li><li><strong>5-6 уроки – CHANGE</strong> (Discuss attitudes to change in general and at work)<br>LANGUAGE WORK: Words for describing change; Past simple and present perfect<br>SKILLS: Managing meetings</li><li><strong>7-8 уроки – ORGANISATION</strong> (Talk about status within an organisation)<br>LANGUAGE WORK: Words and expressions to describe company structure; Noun combinations<br>SKILLS: Socialising: introductions and networking</li><li><strong>9-10 уроки – ADVERTISING</strong> (Discuss authentic advertisements)<br>LANGUAGE WORK: Words and expressions for talking about advertising; Articles<br>SKILLS: Starting and structuring a presentation</li><li><strong>11-12 уроки – MONEY</strong> (Do a Quiz and discuss attitudes to money)<br>LANGUAGE WORK: Words and expressions for talking about finance<br>SKILLS: Dealing with figures and describing trends</li><li><strong>13-14 уроки – CULTURES</strong> (Discuss the importance of cultural awareness in business)<br>LANGUAGE WORK: Idioms for talking about business relationships; Advice, obligation and necessity<br>SKILLS: Social English</li><li><strong>15-16 уроки – HUMAN RESOURCES</strong> (Talk about job interviews)<br>LANGUAGE WORK: Expressions for talking about job applications; -ing forms and infinitives<br>SKILLS: Getting information on the telephone</li><li><strong>17-18 уроки – INTERNATIONAL MARKETS</strong> (Discuss the development of international markets)<br>LANGUAGE WORK: Words and expressions for talking about free trade; Conditions<br>SKILLS: Negotiating</li><li><strong>19-20 уроки – ETHICS</strong> (Discuss questions of ethics at work)<br>LANGUAGE WORK: Words to describe illegal activity or unethical behaviour; Narrative tenses<br>SKILLS: Considering options</li><li><strong>21-22 уроки – LEADERSHIP</strong> (Discuss the qualities of good leadership)<br>LANGUAGE WORK: Words to describe; Relative clauses<br>SKILLS: Presenting</li><li><strong>23-24 уроки – COMPETITION</strong> (Do a quiz on how competitive you are)<br>LANGUAGE WORK: Idioms from sport to describe competition; Passives<br>SKILLS: Negotiating</li></ul>'
-    },
-    {
-      id: 3,
-      title: 'Ділова англійська мова',
-      image: 'assets/images/corporate.png',
-      shortDescription: 'Працюєте в міжнародному середовищі або плануєте кар\'єру у сфері бізнесу? Цей курс допоможе вам впевнено спілкуватися з колегами, клієнтами та партнерами.',
-      longDescription: 'Курс з 24 урокiв та 12 тем. Кожна тема потребує ще й практичних випробувань, тому кожен другий урок буде присвячений вiдпрацюванню практичних навичок, а саме - business cases and role models. Так ви розвинете важливі навички ділового спілкування, такі як проведення презентацій, участь у зустрічах, ведення переговорів, телефонні дзвінки та використання англійської мови в соціальних ситуаціях.',
-      details: [
-        'Підходить для рівнів: від Pre-Intermediate до Upper-Intermediate',
-        'Технiчний формат: онлайн (Zoom/Meet, Miro)',
-        'Тривалість заняття: 90 хв',
-        'Мова викладання: англійська + українська (за потреби)'
-      ],
-      courseDetails: 'Ділова англійська мова...'
+      courseDetails: ''
     },
     {
       id: 4,
+      advertisement:"",
+      announcement:"",
       title: 'Англійська для Meetings',
       image: 'assets/images/meeting.png',
       shortDescription: 'Потребуєте додаткової розмовної практики саме у форматі робочих мітингів? Цей курс допоможе вирішити ваші мовні задачі для ефективного проведення та участі в meetings.',

@@ -17,15 +17,22 @@
             </button>
         </div>
         <div class="p-8">
+            <p>
+            <div class="text-2xl" [innerHTML]=c.advertisement></div>
+            <br/>
+
+<!--            <h2 class="text-3xl font-bold text-slate-900 mb-4" [innerHTML]=c.announcement></h2>-->
+
             <h2 class="text-3xl font-bold text-slate-900 mb-4">{{ c.title }}</h2>
+
             <p class="text-slate-600 mb-6">{{ c.shortDescription }}</p>
             <div class="prose max-w-none text-slate-700">
-                <p>{{ c.longDescription }}</p>
+                <p [innerHTML]=c.longDescription></p>
 
                 @if (c.details?.length) {
                 <ul>
                     @for (item of c.details; track $index) {
-                    <li>{{ item }}</li>
+                    <li [innerHTML]=item></li>
                     }
                 </ul>
                 }
@@ -56,7 +63,7 @@
                     Закрити
                 </button>
             </div>
-            
+
             @if (showDetails()) {
             <div class="px-6 pb-6 bg-slate-50">
                 <div class="bg-white rounded-lg p-6 border border-slate-200">
