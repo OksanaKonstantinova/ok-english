@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common'; // <-- обязательно для *ngIf и *ngFor
+import { CommonModule } from '@angular/common';
 import { Course } from '../../models/course.model';
 
 @Component({
   selector: 'app-course-card',
   standalone: true,
-  imports: [CommonModule], // <-- добавили CommonModule
+  imports: [CommonModule],
   templateUrl: './course-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

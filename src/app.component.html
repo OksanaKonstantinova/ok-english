@@ -70,8 +70,10 @@
                     <app-course-card
                             *ngFor="let c of courses()"
                             [course]="c"
-                            (registrationClick)="openRegistration($event)"
-                    ></app-course-card>
+                            (detailsClick)="openCourseDetails(c)"
+                            (registrationClick)="openRegistration($event)">
+                    </app-course-card>
+
                 </div>
             </section>
 
