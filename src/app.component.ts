@@ -1,12 +1,19 @@
 import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { RegistrationModalComponent } from './components/modal/registration-modal.component';
 import { Course } from './models/course.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CourseCardComponent, ModalComponent],
+  imports: [
+    CommonModule,
+    CourseCardComponent,
+    ModalComponent,
+    RegistrationModalComponent
+  ],
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -21,7 +28,7 @@ export class AppComponent {
     this.showTeacherMore.set(!this.showTeacherMore());
   }
 
-backgroundUrl = new URL('../assets/images/background.jpg', import.meta.url).href;
+  backgroundUrl = new URL('../assets/images/background.jpg', import.meta.url).href;
 
   courses = signal<Course[]>([
     {
@@ -79,6 +86,17 @@ backgroundUrl = new URL('../assets/images/background.jpg', import.meta.url).href
     }
   ]);
 
+  isRegistrationOpen = signal(false); // <-- додаємо цей сигнал
+
+openRegistration(course: Course) {
+    this.selectedCourse.set(course);  // передаем выбранный курс
+    this.isRegistrationOpen.set(true); // открываем модалку
+}
+
+ closeRegistration() {
+   this.isRegistrationOpen.set(false);
+   this.selectedCourse.set(null);        // очищаем выбранный курс
+ }
   toggleMenu(): void {
     this.isMenuOpen.update(value => !value);
   }

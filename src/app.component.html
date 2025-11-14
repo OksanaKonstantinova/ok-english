@@ -68,7 +68,11 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Наші курси</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     @for (course of courses(); track course.id) {
-                    <app-course-card [course]="course" (detailsClick)="openCourseDetails(course)"/>
+                    <app-course-card
+                            *ngFor="let c of courses()"
+                            [course]="c"
+                            (registrationClick)="openRegistration($event)"
+                    ></app-course-card>
                     }
                 </div>
             </section>
@@ -476,8 +480,8 @@
     }
 
     <app-registration-modal
-            *ngIf="isRegistrationOpen"
-            (close)="isRegistrationOpen = false">
-    </app-registration-modal>
-
+            *ngIf="isRegistrationOpen() && selectedCourse()"
+            [course]="selectedCourse()"
+            (close)="closeRegistration()"
+    ></app-registration-modal>
 </div>

@@ -1,20 +1,13 @@
-@if (course(); as c) {
-<div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full">
+<div *ngIf="course as c" class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full">
     <img class="w-full h-56 object-cover" [src]="c.image" [alt]="c.title">
 
     <div class="p-6 flex flex-col flex-grow">
-
         <h3 class="text-3xl text-red-600 font-bold mb-4">{{ c.announcement }}</h3>
-
         <h3 class="text-2xl font-bold text-slate-900 mb-3">{{ c.title }}</h3>
-
         <p class="text-slate-600 text-base mb-4 flex-grow">{{ c.shortDescription }}</p>
 
-
-        <buttonаapp-course-card
-                (click)="onDetailsClick()"
-                class="mt-auto flex items-center text-teal-600 font-semibold text-base hover:text-teal-800 transition-colors"
-        >
+        <!-- Кнопка Детальніше -->
+        <button (click)="onDetailsClick()" class="mt-auto flex items-center text-teal-600 font-semibold text-base hover:text-teal-800 transition-colors cursor-pointer">
             Детальніше
             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                  viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
@@ -22,17 +15,16 @@
                 <path stroke-linecap="round" stroke-linejoin="round"
                       d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
             </svg>
-        </buttonаapp-course-card>
-
+        </button>
 
         <br/>
+
+        <!-- Кнопка открытия модалки регистрации -->
         <button
-                (click)="openRegistration()"
-                class="mb-4 bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition-colors shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                (click)="registrationClick.emit(course)"
+                class="mb-4 bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition-colors"
         >
             Реєстрація
         </button>
-
     </div>
 </div>
-}
